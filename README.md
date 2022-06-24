@@ -3,4 +3,4 @@ This is a replication package for my paper titled Explaining Declining Trends in
 
 Preprint is available at OSF (https://osf.io/yx5tq/)
 
-Working paper is also available at https://sites.google.com/view/csrda-dp
+Working paper is also available at https://csrdadps.com/paper/2
