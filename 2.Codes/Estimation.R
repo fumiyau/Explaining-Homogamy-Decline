@@ -8,7 +8,7 @@
 ######################################################################
 # Change Working Directory
 ######################################################################
-setwd("4.EAMwithCredentials/") 
+setwd("Explaining-Homogamy-Decline") 
 
 ######################################################################
 # Assign colors
@@ -36,7 +36,7 @@ library(haven)
 ######################################################################
 # 5cat3time
 ######################################################################
-df <- read.table("1.Data/log.tmp5cat3timec_2022Feb.txt",header = TRUE,sep = ",") 
+df <- read.table("1.Data/log.tmp5cat3timec.txt",header = TRUE,sep = ",") 
 
 #Pooled sample
 df <- df %>%
