@@ -136,22 +136,6 @@ gnm_list$M4d <- update(gnm_list$M0, ~ . + HusEdu:WifEdu + marco:C1 + marco:C2 + 
 gnm_list$M5a <- update(gnm_list$M0, ~ . + HusEdu:WifEdu + Hom5:marco) # Hypergamy 1, changing
 #gnm_list$M5b <- update(gnm_list$M0, ~ . + HusEdu:WifEdu + Hom6:marco) # Hypergamy 2, changing
 
-gnm_list$M6 <- update(gnm_list$M0, ~ . + HusEdu:WifEdu) # Saturated
-######################################################################
-# Goodness of fit
-######################################################################
-fit_df <- function(gnm_object){
-  df <- gnm_object$df.residual
-  g_sq <- gnm_object$deviance
-  id <- sum(abs(gnm_object$data$weighted-gnm_object$fitted.values))/(2*sum(gnm_object$data$weighted))
-  bic <- g_sq - gnm_object$df.residual * log(sum(gnm_object$data$weighted))
-  fit_df <- data.frame(g_sq,df,id,bic)
-  return(fit_df)
-}
-
-gof1 <- bind_rows(map(gnm_list,fit_df),.id = "model")
-write.csv(gof1,"3.Results/gof1.csv")
-
 ######################################################################
 # Hypothesis testing
 ######################################################################
@@ -227,4 +211,4 @@ coefM2afig <- ggplot(coefM2a, aes(x = homlabelx, y = Estimate)) +
 coeffig_integ <- ggarrange(coefM1bfig, coefM1efig,coefM2afig,
                            labels = c("A","B","C"),
                            ncol = 2, nrow = 2)
-ggsave(coeffig_integ,height=8,width=10,dpi=200, filename="3.Results/Apr2022/Figure4_KHPS.pdf",  family = "Helvetica")
+ggsave(coeffig_integ,height=8,width=10,dpi=200, filename="3.Results/Figure4_KHPS.pdf",  family = "Helvetica")
